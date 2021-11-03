@@ -55,7 +55,12 @@ class MainActivity : AppCompatActivity() {
         btnDial.setOnClickListener {
 //            안드로이드 전화 화면으로 이동 1. 어떤 화면(Action)으로 갈것인가 2. 세부 정보 (URI)
 
-            val myUri = Uri.parse("tel:01057047192")
+//            입력한 전화번호를 저장
+            val inputPhoneNum = edtPhoneNum.text.toString()
+
+
+
+            val myUri = Uri.parse("tel:${inputPhoneNum}")
             val myIntent = intent(Intent.ACTION_DIAL,myUri)
             startActivity(myIntent)
 
