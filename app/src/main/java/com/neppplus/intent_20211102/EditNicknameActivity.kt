@@ -15,7 +15,7 @@ class EditNicknameActivity : AppCompatActivity() {
             val inpitNickName = edtNewNickname.text.toString()
 //            1. 닉네임 들고가야 함 -> 결과를 담아줘야 함 -> 인텐트 추가 활용
 //            이전에 왔다 간다는 왕복을 이야기 해줬기 때문에 출발 도착지를 적지 않음
-            val resultIntent=intent()
+            val resultIntent=intent
 
 //            실제 데이터 첨부, putExtra()
             resultIntent.putExtra("nick",inpitNickName)

@@ -3,6 +3,7 @@ package com.neppplus.intent_20211102
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -50,5 +51,25 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+    }
+//  onActivityResult 무엇이든지 결과를 받아서 돌아오면 실행되는 함수
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        Log.d("메인화면","결과를 받아오면 로그가 찍힘")
+//    구별해야 할 요소 1)어떤 것을 가지러 다녀온것인지? - requestcode 2)확인/취소 구별 3)첨부한 데이터
+    Log.d("리퀘스트 코드",requestCode.toString())
+//    닉네임을 가지고 온게 맞는가? & 확인이 눌린게 맞는가? -> if 안에 if하나 더 씀
+
+    if (requestCode == REQ_CODE_FOR_NICKNAME) {
+        if (resultCode== RESULT_OK){
+
+//            담아준 결과용 Intent ->data에 담겨 있다. -> "Nick"으로 이름 붙인 String을 꺼내 주자
+            val newNickname = data.getStringExtra("nick)
+            txtNickname.text = newNickname
+
+        }
+
+    }
+    
     }
 }
