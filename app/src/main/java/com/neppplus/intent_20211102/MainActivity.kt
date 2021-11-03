@@ -58,8 +58,6 @@ class MainActivity : AppCompatActivity() {
 //            입력한 전화번호를 저장
             val inputPhoneNum = edtPhoneNum.text.toString()
 
-
-
             val myUri = Uri.parse("tel:${inputPhoneNum}")
             val myIntent = intent(Intent.ACTION_DIAL,myUri)
             startActivity(myIntent)
@@ -67,6 +65,14 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        btnCall.setOnClickListener {
+            val inputPhoneNum = edtPhoneNum.text.toString()
+
+            val myUri = Uri.parse("tel:${inputPhoneNum}")
+            val myIntent = intent(Intent.ACTION_CALL,myUri)
+            startActivity(myIntent)
+
+        }
     }
 //  onActivityResult 무엇이든지 결과를 받아서 돌아오면 실행되는 함수
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
