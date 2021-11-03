@@ -73,6 +73,14 @@ class MainActivity : AppCompatActivity() {
             startActivity(myIntent)
 
         }
+        btnSMS.setOnClickListener {
+            val inputPhoneNum = edtPhoneNum.text.toString()
+
+            val myUri = Uri.parse("tel:${inputPhoneNum}")
+            val myIntent = intent(Intent.ACTION_SENDTO,myUri)
+            startActivity(myIntent)
+
+        }
     }
 //  onActivityResult 무엇이든지 결과를 받아서 돌아오면 실행되는 함수
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

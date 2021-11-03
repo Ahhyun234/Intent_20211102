@@ -87,4 +87,10 @@
         android:layout_height="wrap_content"
         android:text="전화걸기(Call)" />
 
+    <Button
+        android:id="@+id/btnSMS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="문자 보내기(Send to)" />
+
 </LinearLayout>
