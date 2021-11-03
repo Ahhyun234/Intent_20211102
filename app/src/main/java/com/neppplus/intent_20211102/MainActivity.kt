@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
             val inputPhoneNum = edtPhoneNum.text.toString()
 
             val myUri = Uri.parse("tel:${inputPhoneNum}")
-            val myIntent = intent(Intent.ACTION_DIAL,myUri)
+            val myIntent =Intent(Intent.ACTION_DIAL,myUri)
             startActivity(myIntent)
 
 
@@ -69,16 +69,19 @@ class MainActivity : AppCompatActivity() {
             val inputPhoneNum = edtPhoneNum.text.toString()
 
             val myUri = Uri.parse("tel:${inputPhoneNum}")
-            val myIntent = intent(Intent.ACTION_CALL,myUri)
+            val myIntent = Intent(Intent.ACTION_CALL,myUri)
             startActivity(myIntent)
 
         }
         btnSMS.setOnClickListener {
             val inputPhoneNum = edtPhoneNum.text.toString()
 
-            val myUri = Uri.parse("tel:${inputPhoneNum}")
-            val myIntent = intent(Intent.ACTION_SENDTO,myUri)
+            val myUri = Uri.parse("smsto:${inputPhoneNum}")
+            val myIntent = Intent(Intent.ACTION_SENDTO,myUri)
+
+            myIntent.putExtra("sms_body","자동으로 입력되는 문구")
             startActivity(myIntent)
+
 
         }
     }
@@ -94,7 +97,7 @@ class MainActivity : AppCompatActivity() {
         if (resultCode== RESULT_OK){
 
 //            담아준 결과용 Intent ->data에 담겨 있다. -> "Nick"으로 이름 붙인 String을 꺼내 주자
-            val newNickname = data.getStringExtra("nick)
+            val newNickname = data?.getStringExtra("nick")
             txtNickname.text = newNickname
 
         }
