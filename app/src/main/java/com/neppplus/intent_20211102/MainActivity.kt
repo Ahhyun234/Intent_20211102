@@ -84,6 +84,14 @@ class MainActivity : AppCompatActivity() {
 
 
         }
+
+        btnNaver.setOnClickListener {
+
+            val myUri = Uri.parse("htpps://www.naver.com/")
+            val myIntent = Intent(Intent.ACTION_VIEW,myUri)
+            startActivity(myIntent)
+
+        }
     }
 //  onActivityResult 무엇이든지 결과를 받아서 돌아오면 실행되는 함수
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

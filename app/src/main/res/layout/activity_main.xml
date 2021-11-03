@@ -92,5 +92,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="문자 보내기(Send to)" />
+    <Button
+        android:id="@+id/btnNaver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="네이버 가기(VIEW)" />
+
 
 </LinearLayout>
